@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "检查这个 Bash 命令是否安全。如果命令包含 'rm -rf'、'sudo'、或试图删除重要系统文件，返回 {\"ok\": false, \"reason\": \"危险命令\"}。否则返回 {\"ok\": true}。命令内容: $ARGUMENTS",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "检查任务是否真正完成。审查对话历史，确认用户请求的所有功能都已实现。如果有遗漏，返回 {\"ok\": false, \"reason\": \"待完成: xxx\"}。如果全部完成，返回 {\"ok\": true}。",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

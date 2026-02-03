@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "agent",
+            "prompt": "验证代码质量：1) 使用 Grep 工具搜索是否有 console.log 调试语句遗留 2) 使用 Read 工具检查修改的文件是否有明显错误 3) 如果发现问题返回 {\"ok\": false, \"reason\": \"问题描述\"}，否则返回 {\"ok\": true}",
+            "timeout": 120
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "agent",
+            "prompt": "检查刚才修改的文件: $ARGUMENTS。使用 Read 工具读取文件内容，验证：1) 代码语法是否正确 2) 是否有未闭合的括号 3) 是否有明显的逻辑错误。如果发现问题返回 {\"ok\": false, \"reason\": \"问题描述\"}",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}
