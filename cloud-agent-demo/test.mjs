@@ -16,7 +16,7 @@ test("初始值为 0", () => {
   });
 });
 
-test("递增到上限 10 后不可再增", () => {
+test("递增到上限 20 后不可再增", () => {
   const c = createCounter();
   for (let i = 0; i < MAX; i += 1) {
     c.increment();

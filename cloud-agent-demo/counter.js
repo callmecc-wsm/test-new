@@ -1,5 +1,5 @@
 /**
- * 纯逻辑计数器：取值 0–10，供浏览器与 Node 测试共用。
+ * 纯逻辑计数器：取值 0–20，供浏览器与 Node 测试共用。
  */
 (function (root, factory) {
   if (typeof module !== "object" || !module.exports) {
@@ -9,7 +9,7 @@
   module.exports = factory();
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   const MIN = 0;
-  const MAX = 10;
+  const MAX = 20;
 
   /**
    * @returns {{ value: number, increment: Function, decrement: Function, reset: Function, getControls: Function }}
