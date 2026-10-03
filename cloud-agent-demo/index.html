@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Agent 计数器演示</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>计数器</h1>
+      <p class="hint">范围 0–20，到边界时对应按钮不可用</p>
+      <div id="counter-value" class="value" aria-live="polite">0</div>
+      <div class="actions">
+        <button type="button" id="btn-minus" aria-label="减一">−1</button>
+        <button type="button" id="btn-reset">重置</button>
+        <button type="button" id="btn-plus" aria-label="加一">+1</button>
+      </div>
+    </main>
+    <script src="counter.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
